@@ -1,0 +1,21 @@
+<html lang="en">
+  <body>
+    <div id="parent-id" class="special">
+      <div>hello world 1</div>
+      <div class="test">hello world 2</div>
+      <div>hello world 3</div>
+      <div>hello world 4</div>
+    </div>
+
+    <script>
+      const parentDOM = document.getElementsByClassName("special")[0];
+      console.log(parentDOM)
+
+      const test = parentDOM.getElementsByClassName("test"); // a list of matching elements, *not* the element itself
+      console.log(test); // HTMLCollection[1]
+
+      const testTarget = parentDOM.getElementsByClassName("test")[0]; // the first element, as we wanted
+      console.log(testTarget); // <p class="test">hello world 2</p>
+    </script>
+  </body>
+</html>

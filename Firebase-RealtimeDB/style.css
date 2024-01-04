@@ -1,0 +1,76 @@
+*{
+    user-select: none;
+}
+.mainBox{
+    padding: 10px;
+    width: 500px;
+    height: 600px;
+    border-radius: 30px;
+    margin: auto;
+    margin-top: 50px;
+    border: 10px solid black;
+}
+.image{
+    display: flex;
+    height: 40%;
+    align-items: center;
+    justify-content: center;
+    background-color:#fcfefb
+}
+
+.input{
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+#text{
+    width: 70%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: rgb(235, 234, 234);
+}
+.button{
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#btn{
+    width: 70%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: rgb(153, 60, 60);
+    color: white;
+    font-size: 25px;
+}
+#shoppingList{
+    width: 90%;
+    height: 35%;
+    /* border: 2px solid blue; */
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    padding: 0;
+    margin: auto;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    flex-grow: 1;
+    border-radius: 20px;
+    font-size: 25px;
+    padding: 20px;
+    background-color: #FFFDF8;
+    list-style-type: none;
+    box-shadow: 0px 1px 4px rgba(0,0,0,0.2);
+}
+
+li:hover{
+    background-color: antiquewhite;
+}

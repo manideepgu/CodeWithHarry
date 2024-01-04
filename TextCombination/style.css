@@ -1,0 +1,31 @@
+.container{
+    background-color: aliceblue;
+}
+textarea{
+    background-color: antiquewhite;
+}
+
+.combinations{
+    /* background-color: aqua; */
+    height: 500px;
+    width: 100%;
+
+}
+
+.rows{
+    /* background-color: aquamarine; */
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 30px;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.items{
+    background-color: azure;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px red dashed;
+    padding: 3px;
+}

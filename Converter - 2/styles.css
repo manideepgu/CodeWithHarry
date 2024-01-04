@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: #03045E;
+}
+
+.titlebar {
+    background-color: #0077B6;
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    margin: 2%;
+    padding: .5em;
+    border-radius: .25em;
+    color: #CAF0F8;
+}
+
+.mainContent {
+    background-color: #00B4D8;
+    margin: auto;
+    height: 90vh;
+    width: 90vw;
+    border-radius: .5em;
+    padding: .1em;
+    /* border: 2px solid blueviolet; */
+}
+.words{
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+}
+.suggests{
+    background-color: inherit;
+    color:inherit;
+    border: 1px dashed blue;
+    border-radius: 5px;
+    height: 20px;
+    padding: 4px;
+}
+
+.convertedData{
+    height: 35%;
+    width: 94%;
+    background-color: #90E0EF;
+    padding: 10px;
+    margin: auto;
+    margin-top: 1em;
+    border-radius: .5em;
+    display: flex;
+    gap: 3px;
+}
+.convertedWord{
+    background-color: inherit;
+    color:inherit;
+    border: 1px dashed blue;
+    border-radius: 5px;
+    height: 20px;
+    padding: 4px;
+    
+}
+
+.edit{
+    display: flex;
+    height: 50%;
+    width: 97%;
+    margin: auto;
+    margin-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 1em;
+    background-color: #90E0EF;
+}
+.data{
+    width: 50%;
+    height: 95%;
+    margin: auto;
+    background-color: #CAF0F8;
+    margin: .5em;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+textarea{
+    background-color: inherit;
+    width: 95%;
+    height: inherit;
+    border: none;
+    font-size: 1.3em;
+    resize: none;
+    padding: 2%;
+}
+.break{
+    width: 97%;
+    height: 46%;
+    margin: auto;
+    border-radius: 1em;
+    margin-top: 0.5em;
+    background-color: #90E0EF;
+}
+button{
+    height: fit-content;
+    background-color: #3CBC8D;
+    padding: 10px;
+}
+.key{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    /* padding: 2%; */
+}
+.keys{
+    display: flex;
+    width: 2em;
+    height: 2em;
+    font-size: 1em;
+    background-color: #0077B6;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5em;
+    margin: .3em;
+}
+
+.language {
+    background-color: #90E0EF;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    /* border: solid 2px red; */
+}
+
+.englishTitle {
+    background-color: #90E0EF;
+    display: flex;
+    justify-content: center;
+}
+
+.bengaliTitle {
+    background-color: #90E0EF;
+    display: flex;
+    justify-content: center;
+}
+
+.writingSpace {
+    background-color: #CAF0F8;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 5px;
+    height: 95%;
+    /* border: solid 2px rgb(21, 247, 127); */
+}
+
+.english {
+    display: flex;
+    /* justify-content: center; */
+    /* border: solid 2px rgb(29, 25, 2); */
+}
+
+.bengali {
+    /* display: flex; */
+    justify-content: center;
+    border: solid 2px rgb(24, 27, 25);width: 95%;
+    margin: auto;
+    height: 95%;
+    background-color: #a2d1c0;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.inputData{
+    resize: none;
+    width: 95%;
+    margin: auto;
+    height: 95%;
+    background-color: #3CBC8D;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.convertedText{
+    background-color: #CAF0F8;
+    display: flex;
+    height: 60%;
+}
+.keyboard{
+    border-top: solid black;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+button{
+    margin: auto;
+    height: fit-content;
+    width: 100%;
+    background-color: #90E0EF;
+    
+    margin-top: 2px;
+    border-radius: .5em;
+}

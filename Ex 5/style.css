@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    display: flex;
+    height: 15vh;
+    background-color:black;
+    color: white;
+
+}
+.logo{
+    display: flex;
+    font-size: 3em;
+    color: black;
+    width: 12vh;
+    height: 12vh;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0px auto 40px;
+    border-radius: 10px;
+    background-color: yellow;
+}
+.companyName{
+    width: 30vh;
+    background-color: black;
+    height: 12vh;
+    margin: auto 0px;
+    display: grid;
+    grid-template-rows: 80% 20%;
+    margin-left: 1vh;
+}
+.grid-1{
+    display: flex;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    align-items: center;
+    font-size: 3em;
+}
+.grid-2{
+    display: flex;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    align-items: center;
+    padding-left: .5em;
+}
+.links{
+    display: flex;
+    margin-left: auto;
+    margin-right: 8%;
+    align-items: center;
+    gap: 2em;
+}
+.linkItems{
+    font-size: 1.2em;
+}

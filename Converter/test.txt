@@ -1,0 +1,10 @@
+Conditions:
+1) Each bengali character or word will have a combination of keys and a number to denote its usage.
+Meaning:
+{ "engKey": "k", "bengChar": "ক", "usage": "13" }
+
+2) when checking the maximum characters to be first tried to be matched then proceeding for the next group
+Meaning: Text -> "Ashirbad"
+
+The full 8 character "Ashirbad" search will be tried, if not found, then Search "Ashirba" and so on. Once the max character is found rest of the word will undergo the same process.
+

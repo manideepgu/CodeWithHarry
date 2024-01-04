@@ -1,0 +1,15 @@
+p{
+    background-color: blue;
+    color: white;
+}
+div:first-child p:first-child{
+    background-color: yellow;
+    color: red;
+}
+
+.box{
+    display: inline-block;
+    padding: 45px;
+    margin: 34px;
+    border: solid;
+}

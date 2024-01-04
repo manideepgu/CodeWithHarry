@@ -1,0 +1,22 @@
+.container{
+    margin: 30px;
+    padding: 10px;
+    width: 80vw;
+    height: 80vh;
+    border: 2px solid black;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    background-color: aqua;
+}
+.box{
+    display: flex;
+    width: fit-content;
+    height: 50px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    color: brown;
+    cursor: pointer;
+}

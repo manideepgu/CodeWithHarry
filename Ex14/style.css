@@ -1,0 +1,11 @@
+*{
+    margin: 10px;
+    padding: 50px;
+    background-color: green;
+}
+.infoBoard{
+    font-size: 80px;
+    font-weight: 800;
+    color: red;
+}
+

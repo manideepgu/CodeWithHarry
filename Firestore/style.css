@@ -1,0 +1,30 @@
+.dataBox{
+    width: 700px;
+    height: 200px;
+    margin: 30px;
+    padding: 30px;
+    border: 2px solid black;
+}
+.viewBox{
+    display: block;
+    width: 700px;
+    min-height: 200px;
+    margin: 30px;
+    padding: 30px;
+    border: 2px solid black;
+}
+
+.row{
+    display: flex;
+    gap: 20px;
+    width: 90%;
+    height: 30px;
+    margin-top: 5px;
+    border: 2px solid red;
+    padding: 2px;
+    /* justify-content: center; */
+    align-items: center;
+}
+.view{
+    width: 30%;
+}

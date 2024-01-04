@@ -1,0 +1,30 @@
+
+
+
+
+let banjan = [{ "english": "o", "bengali": "অ", "use": "1" }, { "english": "a", "bengali": "আ", "use": "2" }, { "english": "i", "bengali": "ই", "use": "1" }, { "english": "ii", "bengali": "ঈ", "use": "2" }, { "english": "u", "bengali": "উ", "use": "1" }, { "english": "oo", "bengali": "ঊ", "use": "1" }, { "english": "ri", "bengali": "ঋ", "use": "2" }, { "english": "li", "bengali": "ঌ", "use": "1" }, { "english": "e", "bengali": "এ", "use": "1" }, { "english": "oi", "bengali": "ঐ", "use": "1" }, { "english": "o", "bengali": "ও", "use": "2" }, { "english": "ou", "bengali": "ঔ", "use": "1" }, { "english": "k", "bengali": "ক", "use": "1" }, { "english": "kh", "bengali": "খ", "use": "1" }, { "english": "g", "bengali": "গ", "use": "2" }, { "english": "gh", "bengali": "ঘ", "use": "1" }, { "english": "n", "bengali": "ঙ", "use": "1" }, { "english": "c", "bengali": "চ", "use": "1" }, { "english": "ch", "bengali": "ছ", "use": "1" }, { "english": "j", "bengali": "জ", "use": "1" }, { "english": "jh", "bengali": "ঝ", "use": "1" }, { "english": "in", "bengali": "ঞ", "use": "1" }, { "english": "t", "bengali": "ট", "use": "1" }, { "english": "th", "bengali": "ঠ", "use": "2" }, { "english": "d", "bengali": "ড", "use": "1" }, { "english": "dh", "bengali": "ঢ", "use": "2" }, { "english": "n", "bengali": "ণ", "use": "1" }, { "english": "t", "bengali": "ত", "use": "1" }, { "english": "th", "bengali": "থ", "use": "1" }, { "english": "d", "bengali": "দ", "use": "1" }, { "english": "dh", "bengali": "ধ", "use": "1" }, { "english": "n", "bengali": "ন", "use": "1" }, { "english": "p", "bengali": "প", "use": "1" }, { "english": "f", "bengali": "ফ", "use": "1" }, { "english": "b", "bengali": "ব", "use": "1" }, { "english": "bh", "bengali": "ভ", "use": "1" }, { "english": "m", "bengali": "ম", "use": "2" }, { "english": "j", "bengali": "য", "use": "1" }, { "english": "r", "bengali": "র", "use": "1" }, { "english": "l", "bengali": "ল", "use": "1" }, { "english": "sh", "bengali": "শ", "use": "2" }, { "english": "sh", "bengali": "ষ", "use": "1" }, { "english": "s", "bengali": "স", "use": "2" }, { "english": "h", "bengali": "হ", "use": "1" }, { "english": "ou", "bengali": "ৌ", "use": "2" }, { "english": "ri", "bengali": "◌ৃ", "use": "2" }, { "english": "u", "bengali": "◌ু", "use": "2" }, { "english": "oo", "bengali": "◌ূ", "use": "1" }, { "english": "y", "bengali": "ৈ", "use": "1" }, { "english": "a", "bengali": "া", "use": "2" }, { "english": "e", "bengali": "ে", "use": "2" }, { "english": "i", "bengali": "ি", "use": "1" }, { "english": "n", "bengali": "◌ঁ", "use": "1" }, { "english": "o", "bengali": "ো", "use": "2" }, { "english": "oi", "bengali": "ৗ", "use": "1" }, { "english": "h", "bengali": "◌্", "use": "1" }]
+
+
+export { banjan };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

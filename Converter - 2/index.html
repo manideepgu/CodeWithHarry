@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Converter</title>
+</head>
+
+<body>
+
+    <div class="titlebar">English to Bengali Converter</div>
+    <div class="mainContent">
+        <div class="convertedData">
+            <!-- <div class="convertedWord" contenteditable="true">Sample</div> -->
+            <!-- <input type="file" name="file" id="filePicker"> -->
+            <!-- <button id="btn" type="submit">Submit</button> -->
+        </div>
+        <div class="edit">
+            <div class="textSpace data"><textarea type="text" id="type" placeholder="Type here"></textarea></div>
+            <div class="suggestion data">
+                <div class="words break">
+                    <div class="suggests">Example</div>
+                </div>
+                <div class="key break">
+
+                </div>
+            </div>
+        </div>
+        <button id="addToFirestore" type="submit">Submit</button>
+        
+    </div>
+
+    <script type="module" src="textArea.js"></script>
+    <script type="module" src="keyboard.js"></script>
+    <script type="module" src="help.js"></script>
+    <script type="module" src="suggestion-word.js"></script>
+    <script type="module" src="./data.mjs"></script>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

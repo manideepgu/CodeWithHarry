@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.nav{
+    width: 100vw;
+    height: 10vh;
+    background-color: aqua;
+    position: sticky;
+    top: 0;
+}
+.top{
+    width: 90vw;
+    height: 40vh;
+    background-color: antiquewhite;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;.
+}
+.Box{
+    display: inline-block;
+    width: 90%;
+    height: 90%;
+    background-color: aquamarine;
+    margin-top: 1rem;
+    margin: auto;
+}
+.left{
+
+}
+.right{
+}
+.bottom{
+    display: flex;
+    width: 90vw;
+    height: 40vh;
+    background-color: rgb(244, 242, 239);
+    margin: 5vw;
+    border-radius: 30%;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6em;
+    font-weight: 800;
+}
+.text{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgb(244, 242, 239);
+    margin: 5vw;
+    overflow: hidden;
+    position: fixed;
+    top: 80vh;
+    left: 70vw;
+}
+.text img{
+    object-fit: cover;
+    height: 100%;
+}
+.footer{
+
+}
