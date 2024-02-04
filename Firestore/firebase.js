@@ -23,7 +23,7 @@ const db = getFirestore(app);
 
 
 
-async function getDatafromFirestore(){
+async function getDiaryEntryFromFirestore(){
     let fetchedData=[];
     const querySnapshot = await getDocs(collection(db, "AddressBook"));
     querySnapshot.forEach((doc) => {
@@ -55,4 +55,4 @@ function updateDatatoFirestore(name,address,phonenumber){
     });
 }
 
-export {getDatafromFirestore, updateDatatoFirestore}
+export {getDiaryEntryFromFirestore, updateDatatoFirestore}

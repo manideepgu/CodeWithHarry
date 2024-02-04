@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Diary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div id="header">
+        <div id="appName">My Diary</div>
+        <div id="userDetails">
+            <!-- <img src="user_avatar.jpg" alt="User Avatar" class="avatar"> -->
+            <h2 class="username">John Doe</h2>    
+        </div>
+    </div>
+    <div class="main">
+        <div id="contentCover">
+            <div id="content">
+                <div class="post">
+                    <div class="post-header">
+                        <div class="eventDate common">Event Date</div>
+                        <div class="dataID common">Data ID</div>
+                        <div class="entryDate common">Entry Date</div>
+                    </div>
+                    <div class="post-text"></div>
+                    <!-- <img src="post_image.jpg" alt="Posted Image" class="post-image"> -->
+                    <div class="post-actions">
+                        <button class="like-button">Like</button>
+                        <button class="comment-button">Comment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="newPost">
+            <div id="converted">
+                <div id="convertedText" placeholder="Converted Text in Bengali"></div>
+                <button id="post-button">Post</button>
+            </div>
+            <div id="create-post">
+                <textarea id="textArea" placeholder="What's on your mind?"></textarea>
+            </div>
+        </div>
+        <div id="suggestion">
+            <div id="suggestionBox"></div>
+            <div id="keyboard"></div>
+        </div>
+    </div>
+    <div id="footer">
+        <p>&copy; 2024 Facebook Clone</p>
+    </div>
+    
+    <!-- <script type="module" src="firebaseMyDiary.js"></script> -->
+    <script type="module" src="script.js"></script>
+    <script type="module" src="keyboard.js"></script>
+    <script type="module" src="typeArea.js"></script>
+    <script type="module" src="convertedText.js"></script>
+    <script type="module" src="suggestionBox.js"></script>
+    <script type="module" src="help.js"></script>
+    <script type="module" src="memory.js"></script>
+    <!-- <script type="module" src="firebaseDictionary.js"></script> -->
+    <!-- <script type="module" src="posts.js"></script> -->
+</body>
+</html>

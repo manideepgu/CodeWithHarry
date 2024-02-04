@@ -1,0 +1,14 @@
+.script1, .script2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    gap: 10px;
+    padding: 3px;
+}
+
+.output{
+    font-size: 30px;
+    font-weight: 600;
+    color: red;
+}

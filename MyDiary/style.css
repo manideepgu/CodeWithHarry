@@ -1,0 +1,277 @@
+.container{
+    width: 95vw;
+    background-color: aliceblue;
+    
+}
+.entry{
+    width: 65%;
+    background-color: antiquewhite;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+}
+
+#header {
+    background-color: #4267B2;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+#appName{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    font-size: 40px;
+}
+#userDetails{
+    height: 70px;
+    position: absolute;
+    background-color: aqua;
+    top: 0px;
+    padding: 10px;
+}
+
+.main{
+    display: flex;
+}
+
+#contentCover {
+    /* max-width: 600px; */
+    margin: 20px 10px;
+    height: 70vh;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 33.3%;
+}
+
+#content {
+    /* max-width: 600px; */
+    /* margin: 20px 10px; */
+    height: 100%;
+    background-color: #fff;
+    /* padding: 20px; */
+    /* border-radius: 8px; */
+    overflow: auto;
+}
+#newPost {
+    /* max-width: 600px; */
+    margin: 20px 10px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 70vh;
+    width: 33.3%;
+}
+#suggestion {
+    /* max-width: 600px; */
+    height: 70vh;
+    margin: 20px 10px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 33.3%;
+}
+#suggestionBox{
+    max-width: 600px;
+    height: 40%;
+    margin: 5px 10px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 3px;
+    /* row-gap: 1px; */
+    flex-wrap: wrap;
+    overflow: auto;
+}
+.suggests{
+    background-color: inherit;
+    color:inherit;
+    border: 1px dashed blue;
+    border-radius: 5px;
+    height: 20px;
+    padding: 4px;
+    font-size: 12px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:default;
+}
+#keyboard{
+    height: 40%;
+    max-width: 600px;
+    margin: 5px 10px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    font-size: 12px;
+}
+#footer {
+    background-color: #dadde1;
+    padding: 10px;
+    text-align: center;
+}
+
+#converted{
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 10px;
+    height: 45%;
+}
+
+#convertedText {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 85%;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    resize: none;
+    padding: 5px;
+    font-size: 12px;
+}
+
+#post-button {
+    background-color: #4267B2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#post-button:hover {
+    background-color: #385898;
+}
+.post {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 5px;
+}
+#create-post {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 10px;
+    height: 45%;
+}
+#create-post textarea {
+    width: 100%;
+    height: 90%;
+    border-radius: 8px;
+    min-height: 100px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    resize: none;
+}
+
+.common{
+    display: flex;
+    border: 2px solid red;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    padding: 3px;
+}
+.eventDate{
+    flex-grow: 1;
+}
+.dataID{
+    flex-grow: 4;
+}
+.entryDate{
+    flex-grow: 1;
+}
+
+.avatar {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.post-text {
+    margin-bottom: 10px;
+}
+
+.post-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.post-actions {
+    display: flex;
+}
+
+.like-button,
+.comment-button {
+    background-color: #4267B2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.like-button:hover,
+.comment-button:hover {
+    background-color: #385898;
+}
+
+.keys{
+    display: flex;
+    width: 2.5em;
+    height: 2.5em;
+    font-size: 1.2em;
+    color: white;
+    background-color: #0077B6;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5em;
+    margin: .3em;
+    cursor: default;
+}
+.convertedWord{
+    background-color: inherit;
+    color:black;
+    border: 1px dashed blue;
+    border-radius: 5px;
+    height: 20px;
+    padding: 4px;
+}

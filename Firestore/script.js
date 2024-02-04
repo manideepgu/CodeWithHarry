@@ -1,4 +1,4 @@
-import { getDatafromFirestore, updateDatatoFirestore } from "./firebase.js";
+import { getDiaryEntryFromFirestore, updateDatatoFirestore } from "./firebase.js";
 
 const inputName = document.getElementById("name")
 const inputAddress = document.getElementById("address")
@@ -10,7 +10,7 @@ const btnToRefreshDataFromFirestore = document.getElementById("refresh");
 const viewBox=document.querySelector(".viewBox");
 
 async function fillData(){
-    let fetchedData=await getDatafromFirestore();
+    let fetchedData=await getDiaryEntryFromFirestore();
     viewBox.innerHTML="";
     console.log("Here It is: ", viewBox);
     console.log("Looping through fetched Data");

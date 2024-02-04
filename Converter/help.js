@@ -1,9 +1,9 @@
 import { banjan } from "./data.mjs";
-import { getDatafromFirestore } from "./firebase.js";
+import { getDiaryEntryFromFirestore } from "./firebase.js";
 
 async function createFullDictionary(){
     let dictionary=[];
-    let fetchedData=await getDatafromFirestore()
+    let fetchedData=await getDiaryEntryFromFirestore()
     dictionary=banjan.concat(fetchedData);
     console.log(dictionary);
     return dictionary;

@@ -19,7 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-async function getDatafromFirestore() {
+async function getDiaryEntryFromFirestore() {
     let fetchedData = [];
     const querySnapshot = await getDocs(collection(db, "Dictionary"));
     querySnapshot.forEach((doc) => {
@@ -74,4 +74,4 @@ async function updateDataToFirestore(english, bengali) {
 
 
 
-export { getDatafromFirestore, addDataToFirestore, updateDataToFirestore }
+export { getDiaryEntryFromFirestore, addDataToFirestore, updateDataToFirestore }
