@@ -39,6 +39,7 @@ function getArrayDataForFirestoreDictionaryUpdate(benData,engData){
 }
 
 function showConvertedData(benDataArray){
+    console.log("Inside showConvertedData function()  ",JSON.stringify(benDataArray))
     benText.innerHTML="";
     benDataArray.forEach((element)=>{
         let newConvertedWord=document.createElement("div");

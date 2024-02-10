@@ -2,6 +2,7 @@ let benConfirmedSubWord = "";
 let engTextForBengWord = "";
 let engTextArray=[];
 let benTextArray=[[]];
+let benHistory=[];
 
 function getConfirmedBenSubWord() {
     return benConfirmedSubWord;
@@ -37,4 +38,12 @@ function setBenTextArray(textArray) {
     benTextArray = textArray;
     console.log("Setting Memory for benTextArray to: ", JSON.stringify(benTextArray))
 }
-export { getConfirmedBenSubWord, setConfirmedBenSubWord, getEngTextForBengWord, setEngTextForBengWord, getEngTextArray, setEngTextArray, getBenTextArray,setBenTextArray}
+function getBenHistoryArray() {
+    return benHistory;
+}
+
+function setBenHistoryArray(textArray) {
+    benHistory=[...textArray];
+    console.log("Setting Memory for benHistoryArray to: ", JSON.stringify(benHistory))
+}
+export { getConfirmedBenSubWord, getBenHistoryArray, setBenHistoryArray, setConfirmedBenSubWord, getEngTextForBengWord, setEngTextForBengWord, getEngTextArray, setEngTextArray, getBenTextArray,setBenTextArray}

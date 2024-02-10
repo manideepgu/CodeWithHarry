@@ -35,20 +35,24 @@ async function findBengMatch(text){
     return bengText
 }
 
-async function searchAllBengWords(subWord){
+async function searchAllBengWords(word){
     console.log("Inside searchAllBengWords function !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    console.log("word to be searched in dictionary  ",word);
     // dictionary=await createFullDictionary();
     // console.log(dictionary);
     let searchSuccess=false;
     let result = [];
     dictionary.forEach(element => {
-        if(element.english==subWord){
-            console.log("Searching the data: ",element.bengali);
+        if(element["english"]===word){
+            console.log("Searching the data: ",JSON.stringify(element));
+            console.log("Dictionary entry matching subword: ",JSON.stringify(element["english"])," SubWord: ",word);
+            console.log("Searching the data: ",element["bengali"]);
             searchSuccess=true;
             result.push(element);
+            console.log("Result: ",JSON.stringify(result));
         }
     });
-    console.log("Exiting searchAllBengWords function !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    console.log("Exiting searchAllBengWords function !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  ",result);
     return result;
 }
 

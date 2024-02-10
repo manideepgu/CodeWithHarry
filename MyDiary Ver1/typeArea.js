@@ -2,13 +2,14 @@ const benText = document.querySelector("#convertedText")
 const engText = document.getElementById("textArea");
 
 import { findBengMatch } from "./help.js";
-import { buildSuggestions, buildSuggestionsVer2 } from "./suggestionBox.js";
+import { buildSuggestions, buildSuggestionsVer2, flattenArray } from "./suggestionBox.js";
 import { textToArray, isAlphabet } from "./keyboard.js";
 import { showConvertedData } from "./convertedText.js";
 import {
     setConfirmedBenSubWord, setEngTextForBengWord,
     getEngTextArray, setEngTextArray,
-    getBenTextArray, setBenTextArray
+    getBenTextArray, setBenTextArray,
+    getBenHistoryArray, setBenHistoryArray
 }
     from "./memory.js";
 
@@ -56,9 +57,12 @@ engText.addEventListener("keydown", async (e) => {
     console.log("---------------------------------A key is down.-------------------------------",e.key);
     // console.log("Ben Text Array ==>",benText.textContent,"P")
     let textArray = getEngTextArray();
+    let lengthOfPrevTextArray = flattenArray(textArray).length;
+    console.log("Length Of Text Array:-  ",lengthOfPrevTextArray)
     //Text Array format: =[[a,m,a,r],[b,e,sh],[bh,a,l,o],[l,a,g,ch,e]]
     console.log("Inside Type Down Function: textArray ==>",JSON.stringify(textArray))
     lastEntry = getLastEntryOfArray(textArray);
+    let benDataArray=getBenTextArray();
     let x = e.key.charCodeAt(0);
     if (e.key.length == 1) {
         // console.log("The key has only one character");
@@ -100,11 +104,19 @@ engText.addEventListener("keydown", async (e) => {
             text.value = newText;
             previousKey = "";
         }
+        benDataArray = await buildBenDataFromEngTextArray(textArray);
+        console.log("Get Ben Data Array: ",JSON.stringify(benDataArray))
+        let benHistory=[...getBenHistoryArray()];
+        console.log("Get Ben History Array: ",JSON.stringify(benHistory))
+        benHistory.push([...benDataArray]);
+        console.log("Setting new Ben History Array: ",JSON.stringify(benHistory))
+        setBenHistoryArray([...benHistory]);
     } else {
         // console.log('The Key has multiple characters');
         if (e.key == "Backspace") {
-            // console.log('Backspace key pressed');
+            console.log('Backspace key pressed');
             textArray=deleteLastElement(textArray);
+            benDataArray=await getDeletedBenData(textArray)
         }
         if (e.key == "Control") {
             // console.log("Control is pressed");
@@ -112,28 +124,83 @@ engText.addEventListener("keydown", async (e) => {
             // console.log("Previous Key is set to Control")
         }
     }
+    console.log("---------- Type Function concluded  -------------")
+    // benDataArray = await buildBenDataFromEngTextArray(textArray,lengthOfPrevTextArray);
     console.log("English Text Array",JSON.stringify(textArray))
+    
     setEngTextArray(textArray);
-    let preferredFullSuggestion=(await buildSuggestions(textArray))[0];
-    console.log("Inside Suggestions ==>>",JSON.stringify(preferredFullSuggestion))
-    let preferredBenSuggestion = preferredFullSuggestion["bengali"]
-    console.log("Preferred Ben Suggestions ==>>",JSON.stringify(preferredBenSuggestion))
-    let benText=getBenTextArray();
-    console.log("Ben Text ==>>",JSON.stringify(benText))
-    if(textArray.length==benText.length){
-        benText.pop();
-        benText.push(preferredBenSuggestion)
-    }else{
-        benText.push(preferredBenSuggestion)
-    }
-    setBenTextArray(benText)
-    showConvertedData(benText)
+    setBenTextArray(benDataArray)
+    console.log("Final BenData before showing: ",JSON.stringify(benDataArray))
+    showConvertedData(benDataArray)
 });
 
 
+async function buildBenDataFromEngTextArray(textArray){
+    console.log("########  INSIDE buildBenDataFromEngTextArray function()   ##########")
+    let benDataArray=getBenTextArray();
+    lastEntry = getLastEntryOfArray(textArray);
+    console.log("Last Entry of the Text Array",JSON.stringify(lastEntry))
+    let preferredBenSuggestion="";
+    let preferredFullSuggestion="";
+        
+    if(textArray.length>benDataArray.length){
+        //textArray > benDataArray, meaning new character is added
+        console.log("Character added for a new Word",JSON.stringify(textArray))
+        if (lastEntry=="alphabet"){    
+            preferredFullSuggestion=(await buildSuggestions(textArray))[0];
+            console.log("Inside Suggestions ==>>",JSON.stringify(preferredFullSuggestion))
+            preferredBenSuggestion = preferredFullSuggestion["bengali"]
+            console.log("Inside Suggestions ==>>",JSON.stringify(preferredBenSuggestion))
+            let lastElemOfpreferredBenSuggestion=preferredBenSuggestion[preferredBenSuggestion.length-1];
+            console.log("Inside Suggestions ==>>",JSON.stringify(lastElemOfpreferredBenSuggestion))
+            textArray[textArray.length-1]=preferredFullSuggestion["english"]
+            console.log("Preferred Ben Suggestions ==>>",JSON.stringify(preferredBenSuggestion))
+            // benDataArray.push(preferredBenSuggestion)   
+        }else{
+            preferredBenSuggestion = textArray[textArray.length-1]
+            benDataArray.push(preferredBenSuggestion)
+            }
+    } else if (textArray.length==benDataArray.length){
+        console.log("Character added to an existing word",JSON.stringify(textArray))
+        if (lastEntry=="alphabet"){    
+            console.log("Last Entry was an alphabet.... ")
+            preferredFullSuggestion=(await buildSuggestions(textArray))[0];
+            console.log("Inside Suggestions ==>>",JSON.stringify(preferredFullSuggestion))
+            preferredBenSuggestion = preferredFullSuggestion["bengali"]
+            console.log("Inside Suggestions ==>>",JSON.stringify(preferredBenSuggestion))
+            let lastElemOfpreferredBenSuggestion=preferredBenSuggestion[preferredBenSuggestion.length-1];
+            console.log("Inside Suggestions ==>>",JSON.stringify(lastElemOfpreferredBenSuggestion))
+            textArray[textArray.length-1]=preferredFullSuggestion["english"]
+            console.log("Preferred Ben Suggestions ==>>",JSON.stringify(preferredBenSuggestion))
+            benDataArray[benDataArray.length-1]=(preferredBenSuggestion)   
+        }else{
+            preferredBenSuggestion = textArray[textArray.length-1]
+            benDataArray[benDataArray.length-1]=preferredBenSuggestion
+            }
+    }
+    console.log("Ben Data Array ==>>",JSON.stringify(benDataArray))
+    console.log("XXXXXXXXXXXXXXXXXXXXXXX  EXITING buildBenDataFromEngTextArray function()  XXXXXXXXXx")
+    return benDataArray
+}
 
-
-
+async function getDeletedBenData(textArray){
+    console.log("########  INSIDE getDeletedBenData function()   ##########")
+    let benDataArray=getBenTextArray();
+    console.log("Text Array: ",JSON.stringify(textArray)," benDataArray: ",JSON.stringify(benDataArray))
+    let benHistory=[...getBenHistoryArray()];
+    console.log("---------------------Ben History: ",JSON.stringify(benHistory))
+    benHistory.pop();
+    console.log("---------------------Ben History removing last element: ",JSON.stringify(benHistory))
+    if(benHistory.length>0){
+        benDataArray=[...benHistory[benHistory.length-1]];
+    } else {
+        benDataArray.pop();
+    }
+    console.log("---------------------Ben Data Array: ",JSON.stringify(benDataArray))
+    console.log("XXXXXXXXXXXXXXXXXXXXXXX  EXITING buildBenDataFromEngTextArray function()  XXXXXXXXXx")
+    setBenHistoryArray(benHistory)
+    return benDataArray
+}
 
 function deleteLastElement(textArray) {
     // console.log("Deleting the Last element");

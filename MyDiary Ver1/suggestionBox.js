@@ -11,7 +11,7 @@ import { showConvertedData } from "./convertedText.js";
 async function buildSuggestions(textArray) {
     console.log("Inside buildSuggestions function ........................")
     //Text Array format: =[[a,m,a,r],[b,e,sh],[bh,a,l,o],[l,a,g,ch,e]]
-    console.log("Within buildSuggestions(): textArray=",JSON.stringify(textArray))
+    console.log("Within buildSuggestion7s(): textArray=",JSON.stringify(textArray))
     let suggestions = [];
     // let currentWord = textArray[textArray.length - 1]
     if (textArray.length > 0) {
@@ -127,6 +127,7 @@ async function getSuggestionsWithLastTwoElements(currentEngWord,currentBenWord) 
         let newEnglish=[...currentEngWord];
         console.log("Checking Value of newEnglish element BEFORE >>", JSON.stringify(newEnglish))
         newEnglish.splice(newEnglish.length-2,2);
+        console.log("Checking Value of newEnglish element After >>", JSON.stringify(newEnglish))
         newEnglish.push(element["english"])
         console.log("Checking Value of newEnglish element After >>", JSON.stringify(newEnglish))
         element["english"]=newEnglish;
@@ -197,13 +198,14 @@ function sortSuggestions(suggests) {
     return sortedSuggests
 }
 
-function updateBenData(textArray, suggestions) {
+function updateBenData1(textArray, suggestions) {
     console.log("##############INSIDE updateBenData function##########################")
     let mainSuggest = suggestions[0];
     let benDataArray = getBenTextArray();
     console.log("Within updateBenData: benDataArray ==>", JSON.stringify(benDataArray))
     console.log("Within updateBenData: mainSuggest ==>", JSON.stringify(mainSuggest))
     let benSuggestedWord=mainSuggest["bengali"]
+    let engSuggestedWord=mainSuggest["english"]
     let benSuggestedChar=benSuggestedWord[benSuggestedWord.length-1];
     if(benDataArray.length>0){
         console.log("benDataArray length is greater than 0")
@@ -263,6 +265,81 @@ function updateBenData(textArray, suggestions) {
     console.log("XXXXXXXXXXXXXXXXXXXXXXXXxEXITING updateBenData functionXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 }
 
+function updateBenData(textArray, suggestions) {
+    console.log("##############INSIDE updateBenData function##########################")
+    let mainSuggest = suggestions[0];
+    let benDataArray = getBenTextArray();
+    console.log("Within updateBenData: benDataArray ==>", JSON.stringify(benDataArray))
+    console.log("Within updateBenData: mainSuggest ==>", JSON.stringify(mainSuggest))
+    // let benSuggestedWord=mainSuggest["bengali"]
+    // let engSuggestedWord=mainSuggest["english"]
+    // let benSuggestedChar=benSuggestedWord[benSuggestedWord.length-1];
+    if(benDataArray.length==textArray.length){
+        console.log("BenData and Text Array are of same Length")
+        let lastWord = mainSuggest["bengali"]
+        console.log("Within updateBenData: lastWord ==>", JSON.stringify(lastWord))
+        benDataArray[benDataArray.length-1]=lastWord;
+        console.log("Within updateBenData: benDataArray ==>", JSON.stringify(benDataArray))
+        let lastEngWord=mainSuggest["bengali"]
+        textArray[textArray.length-1]=lastEngWord
+        console.log("Within updateBenData: lastEngWord ==>", JSON.stringify(lastEngWord))
+    }else{
+        console.log("BenData Array and Text Array are of different Length")
+        let lastWord = mainSuggest["bengali"]
+        console.log("Within updateBenData: lastWord ==>", JSON.stringify(lastWord))
+        benDataArray.push(lastWord);
+        console.log("Within updateBenData: benDataArray ==>", JSON.stringify(benDataArray))
+        let lastEngWord=mainSuggest["bengali"]
+        textArray[textArray.length-1]=lastEngWord
+        console.log("Within updateBenData: lastEngWord ==>", JSON.stringify(lastEngWord))
+    }
+
+
+    //     console.log("benDataArray length is greater than 0")
+    //     console.log("Within updateBenData: mainSuggest[english] ==>", JSON.stringify(mainSuggest["english"]))
+    //     if(mainSuggest["english"].length>1){
+    //         //when the last two character elements are combined
+    //         console.log("mainSuggest[english] is greater than 1")
+        
+    //     }else{
+    //         //when a single element is added
+    //         console.log("mainSuggest[english] is lesser than equal to 1")
+    //         if(textArray.length>benDataArray.length){
+    //             //when new word is added to the array
+    //             console.log("Length of englishTextArray is greater than length of BengDataArray")
+    //             console.log("Within updateBenData: benDataArray ==>", JSON.stringify(benDataArray))
+    //             benDataArray.push([mainSuggest["bengali"]])
+    //             console.log("Within updateBenData: benDataArray after adding the main suggestion ==>", JSON.stringify(benDataArray))
+    //         } else {
+    //             console.log("Length of englishTextArray is equal to length of BengDataArray")
+    //             //when one single element is added to the last word only
+    //             console.log("Within updateBenData: benDataArray ==>", JSON.stringify(benDataArray))
+    //             let lastWord = benDataArray[benDataArray.length-1]
+    //             console.log("Within updateBenData: lastWord ==>", JSON.stringify(lastWord))
+    //             console.log("Within updateBenData: mainSuggest[bengali] ==>", JSON.stringify(mainSuggest["bengali"]))
+    //             if(benSuggestedChar.length>1){
+    //                 console.log("Within updateBenData: Length of mainSuggest[bengali] is greater than 1",mainSuggest["bengali"])    
+    //                 lastWord.pop();
+    //                 console.log("Within updateBenData: lastWord after removal of last element",lastWord)    
+    //             }
+    //             lastWord.push(mainSuggest["bengali"][0])
+    //             console.log("Within updateBenData: lastWord after adding suggestion ==>", JSON.stringify(lastWord))
+    //             benDataArray[benDataArray.length-1]=lastWord;
+    //             console.log("Within updateBenData: benDataArray ==>", JSON.stringify(benDataArray))
+    //         }
+    //     }
+    // } else {
+    //     //When benData is blank
+    //     console.log("benDataArray is 0")
+    //     console.log("Within updateBenData: benDataArray ==>", JSON.stringify(benDataArray))
+    //     benDataArray.push([mainSuggest["bengali"]])
+    //     console.log("Within updateBenData: benDataArray ==>", JSON.stringify(benDataArray))
+    // }
+    // setEngTextArray(textArray);
+    // showConvertedData(benDataArray)
+    // setBenTextArray(benDataArray);
+    // console.log("XXXXXXXXXXXXXXXXXXXXXXXXxEXITING updateBenData functionXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+}
 
 function getAllCombinationsOfFullEngText(text) {
     console.log("The Text Typed is: ", text)
@@ -444,4 +521,4 @@ async function buildSuggestionsVer2(textArray) {
     showSuggestions(confirmedSuggestion, currentWord);
 }
 
-export { buildSuggestions, buildSuggestionsVer2 }
+export { buildSuggestions, buildSuggestionsVer2, flattenArray }
