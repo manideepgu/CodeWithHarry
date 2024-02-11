@@ -43,7 +43,7 @@ async function searchAllBengWords(word){
     let searchSuccess=false;
     let result = [];
     dictionary.forEach(element => {
-        if(element["english"]===word){
+        if(element["english"]==word){
             console.log("Searching the data: ",JSON.stringify(element));
             console.log("Dictionary entry matching subword: ",JSON.stringify(element["english"])," SubWord: ",word);
             console.log("Searching the data: ",element["bengali"]);

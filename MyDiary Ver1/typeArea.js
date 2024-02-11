@@ -117,6 +117,7 @@ engText.addEventListener("keydown", async (e) => {
             console.log('Backspace key pressed');
             textArray=deleteLastElement(textArray);
             benDataArray=await getDeletedBenData(textArray)
+            await buildBenDataFromEngTextArray(textArray);
         }
         if (e.key == "Control") {
             // console.log("Control is pressed");
@@ -249,6 +250,7 @@ function getLastEntryOfArray(textArray) {
             console.log("Within getLastEntryOfArray: lastCharacterSet ==>>",JSON.stringify(lastCharacterSet))
             let lastCharacter=lastCharacterSet.slice(-1);
             console.log("Within getLastEntryOfArray: lastCharacter ==>>",JSON.stringify(lastCharacter))
+            // lastCharacter=lastCharacter[lastCharacter.length-1];
             let lastCharacterCode = lastCharacter.charCodeAt(0);
             if ((lastCharacterCode >= 65 && lastCharacterCode <= 90) || (lastCharacterCode >= 97 && lastCharacterCode <= 122)) {
                 lastEntry = "alphabet"

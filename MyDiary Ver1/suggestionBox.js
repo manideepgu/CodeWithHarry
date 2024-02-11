@@ -4,7 +4,8 @@ import { searchAllBengWords } from "./help.js";
 import {
     getConfirmedBenSubWord, setConfirmedBenSubWord,
     getEngTextForBengWord, setEngTextForBengWord,
-    getBenTextArray, setBenTextArray, setEngTextArray
+    getBenTextArray, setBenTextArray, setEngTextArray,
+    getBenHistoryArray, setBenHistoryArray
 } from "./memory.js";
 import { showConvertedData } from "./convertedText.js";
 
@@ -267,7 +268,10 @@ function updateBenData1(textArray, suggestions) {
 
 function updateBenData(textArray, suggestions) {
     console.log("##############INSIDE updateBenData function##########################")
-    let mainSuggest = suggestions[0];
+    let mainSuggest = [];
+    if(suggestions.length>0){
+        mainSuggest=suggestions[0];
+    }
     let benDataArray = getBenTextArray();
     console.log("Within updateBenData: benDataArray ==>", JSON.stringify(benDataArray))
     console.log("Within updateBenData: mainSuggest ==>", JSON.stringify(mainSuggest))
@@ -484,10 +488,21 @@ function showSuggestions(suggestions) {
         newSuggestion.innerHTML = eachSuggestion["bengali"].join("");
         newSuggestion.addEventListener("click", () => {
             let text = document.getElementsByClassName("convertedWord");
-            console.log(text[text.length - 1]);
-            text[text.length - 1].innerHTML = eachSuggestion["bengali"];
-            setConfirmedBenSubWord(eachSuggestion["bengali"]);
-            setEngTextForBengWord(currentWord)
+            console.log("Suggestion have been clicked",text[text.length - 1]);
+            text[text.length - 1].innerHTML = eachSuggestion["bengali"].join("");
+            console.log("Clicked Suggestion",JSON.stringify(eachSuggestion["bengali"]));
+            let benTextArray = getBenTextArray();
+            let benTextHistory = getBenHistoryArray();
+            console.log("Current BenText Array:  ",JSON.stringify(benTextArray));
+            console.log("bentextHistory before changing to clicked selection:  ",JSON.stringify(benTextHistory));
+            benTextArray[benTextArray.length-1]=eachSuggestion["bengali"];
+            console.log("Ben Text Array after changing to clicked selection:  ",JSON.stringify(benTextArray));
+            benTextHistory.pop();
+            benTextHistory.push(benTextArray);
+            setBenTextArray(benTextArray);
+            setBenHistoryArray(benTextHistory);
+            // setConfirmedBenSubWord(eachSuggestion["bengali"]);
+            // setEngTextForBengWord(currentWord)
         })
         suggestionBox.appendChild(newSuggestion);
     })
